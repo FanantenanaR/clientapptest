@@ -9,7 +9,7 @@ const LiEtudiant: FC<PropsLiEtudiant> = (props) => {
   const { student } = props;
   return (
     <li className="min-w-400">
-      <button type="button" className="etudiant w-250" value={student.roomId}>
+      <button type="button" className="etudiant w-250">
         {student.nomPC}
       </button>
     </li>
