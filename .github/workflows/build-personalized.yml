@@ -27,8 +27,4 @@ jobs:
       with:
         name: app-macos
         path: release/
-    - name: Download a Build Artifact
-      uses: actions/download-artifact@v3.0.0
-      with:
-        name: app-macos
-        path: release/
+    - run: ls -l release
