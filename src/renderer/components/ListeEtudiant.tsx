@@ -17,14 +17,17 @@ const LiEtudiant: FC<PropsLiEtudiant> = (props) => {
 };
 
 const ListeEtudiant = () => {
-  const [liste, setListe] = useState<Etudiant[]>([
+  const liste = [
     { nomPC: 'me', roomId: 'myRoom' },
     { nomPC: 'you', roomId: 'yourRoom' },
-  ]);
-  const [loaded, setLoaded] = useState(true);
-  const getListe = () => {};
+  ];
+  const [loaded, setLoaded] = useState(false);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    if ( liste.length > 0 ){
+      setLoaded(true);
+    }
+  }, []);
 
   return (
     <>
