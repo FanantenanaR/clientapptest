@@ -26,6 +26,6 @@ jobs:
       uses: actions/upload-artifact@v2.2.3
       with:
         name: app-macos
-        path: dist/
+        path: release/app/.
     
   
