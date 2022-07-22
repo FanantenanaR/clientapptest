@@ -1,0 +1,30 @@
+name: 64-bit - Build Executable Files
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-mac:
+
+    runs-on: macOS-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x] # Don't use v16, last time I checked there were a few issues with it
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm install
+    - run: npm run package
+    - name: Save Files
+      uses: actions/upload-artifact@v2.2.3
+      with:
+        name: app-macos
+        path: dist/
+    
