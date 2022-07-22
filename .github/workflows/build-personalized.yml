@@ -27,4 +27,3 @@ jobs:
       with:
         name: app-macos
         path: release/
-    - run: ls -l release
